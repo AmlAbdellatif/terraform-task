@@ -1,0 +1,2 @@
+the ip address of ec2 bastion in region us-east-1 is 54.175.209.183
+the ip address of ec2 bastion in region eu-central-1 is 3.121.209.77
