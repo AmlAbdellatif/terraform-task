@@ -8,7 +8,7 @@ resource "aws_instance" "bastion" {
   associate_public_ip_address = true
 
   provisioner "local-exec" {
-    command = "echo the ip address of ec2 bastion in region ${var.region} is ${self.public_ip} >> public_ips.txt"
+    command = "echo  hello the ip address of ec2 bastion in region ${var.region} is ${self.public_ip} >> public_ips.txt"
 
   }
 
