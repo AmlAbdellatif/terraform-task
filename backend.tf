@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "prod-bucket-terraform"
+    bucket = "my-bucket-terraform"
     key    = "files"
     region = "eu-central-1"
   }
