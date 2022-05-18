@@ -1,7 +1,6 @@
 pipeline{
     
     agent any
-   
     stages{
         stage('Git Checkout')
           {
@@ -14,11 +13,7 @@ pipeline{
           {
             steps
             {
-                sh """
-                    terraform init
-                    terraform plan
-                    terraform fmt
-                    """
+                sh "terraform init"
             }
           }
         stage('Terraform apply')
@@ -27,7 +22,7 @@ pipeline{
             {
                sh """
                      terraform workspace select dev 
-                     terraform apply --auto-approve 
+                     terraform apply  -var-file dev.tfvars  --auto-approve 
                  """
             }
           }
