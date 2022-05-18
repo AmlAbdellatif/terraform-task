@@ -31,7 +31,7 @@ resource "aws_security_group" "sg1" {
   }
 
   tags = {
-    Name = "sg1"
+    Name = "${var.workspace}-sg1"
   }
 }
 
@@ -67,7 +67,7 @@ resource "aws_security_group" "sg2" {
   }
 
   tags = {
-    Name = "sg2"
+    Name = "${var.workspace}-sg2"
   }
 }
 
@@ -77,14 +77,7 @@ resource "aws_security_group" "sg-db" {
   name   = "rds_sg"
   vpc_id = module.network.vpc_id
 
-  # ingress {
-  #  description = "allow all "
-  #   from_port   = 3306
-  #   to_port     = 3306
-  #    protocol    = "tcp"
-  #   cidr_blocks = ["0.0.0.0/0"]
-  # security_groups=[aws_security_group.sg1.id]
-  # }
+
   ingress {
     description = "all"
     from_port   = 3306
