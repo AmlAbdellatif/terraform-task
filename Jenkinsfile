@@ -7,7 +7,9 @@ pipeline{
             steps
             {
                 withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
-                sh "terraform init"
+                {
+                    sh "terraform init"
+                }
             }
           }
         stage('Terraform apply')
