@@ -8,7 +8,7 @@ pipeline{
         stage('Terraform Init')
         {  
             steps {
-                withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'aws-credential', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                   
                     sh """
                     terraform init
