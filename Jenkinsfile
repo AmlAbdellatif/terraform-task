@@ -3,15 +3,18 @@ pipeline{
     agent any
     stages{
         stage('Terraform Init')
-          {
-            steps
-            {
-                withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
-                {
-                    sh "terraform init"
+        {  
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                  
+                    sh """
+                    terraform init
+                    terraform plan
+                    """
+                    
+                    }
                 }
             }
-          }
         stage('Terraform apply')
           {
             steps
