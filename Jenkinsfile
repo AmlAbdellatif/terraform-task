@@ -2,17 +2,11 @@ pipeline{
     
     agent any
     stages{
-        stage('Git Checkout')
-          {
-            steps
-            {  
-                withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
-            }
-          }
         stage('Terraform Init')
           {
             steps
             {
+                withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
                 sh "terraform init"
             }
           }
