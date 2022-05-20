@@ -1,33 +1,43 @@
 pipeline{
     
     agent any
+    tools 
+      {
+        terraform 'terraform'
+      }
     stages{
-        stage('Git Checkout')
-          {
-            steps
-            {  
-                withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
-            }
-          }
         stage('Terraform Init')
-          {
-            steps
+        {  
+            steps 
             {
-                sh "terraform init"
+                script 
+                {
+                    echo 'initializing terraform ...'
+                    withAWS(credentials: 'aws') 
+                    {
+                        sh 'terraform  init -migrate-state'                    }
+            
+                }   
+            
             }
-          }
-        stage('Terraform apply')
-          {
-            steps
-            {
-               sh """
-                     terraform workspace select dev 
-                     terraform apply  -var-file dev.tfvars  --auto-approve 
-                 """
-            }
-          }
-    }
-
-
+        }
     
+        stage('Terraform apply')
+        {
+            steps
+            {
+                
+                  script 
+                {
+                    echo 'appling terraform ...'
+                    withAWS(credentials: 'aws') 
+                    {
+                        sh 'terraform  apply --var-file dev.tfvars -auto-approve'   
+                    }
+            
+                } 
+             
+            }
+         }
+    }
 }
