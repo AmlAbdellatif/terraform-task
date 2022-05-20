@@ -15,7 +15,7 @@ pipeline{
                     echo 'initializing terraform ...'
                     withAWS(credentials: 'aws') 
                     {
-                        sh 'terraform  init -migrate-state'                    }
+                        sh 'terraform  init -reconfigure'                    }
             
                 }   
             
