@@ -57,6 +57,20 @@ resource "aws_security_group" "sg2" {
     cidr_blocks = ["0.0.0.0/0"]
     # ipv6_cidr_blocks = [aws_vpc.lab1-vpc.ipv6_cidr_block]
   }
+  
+    ingress {
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+    cidr_blocks = [module.network.vpc_cidr] 
+  }
+    ingress {
+    from_port = 6379
+    to_port = 6379
+    protocol = "tcp"
+    cidr_blocks = [module.network.vpc_cidr] 
+  }
+
 
   egress {
     from_port   = 0
