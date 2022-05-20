@@ -32,7 +32,7 @@ pipeline{
                     echo 'appling terraform ...'
                     withAWS(credentials: 'aws') 
                     {
-                        sh 'terraform  apply --var-file dev.tfvars -auto-approve'   
+                      //  sh 'terraform  apply --var-file dev.tfvars -auto-approve'   
                     }
             
                 } 
