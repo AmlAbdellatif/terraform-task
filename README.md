@@ -1,3 +1,10 @@
+#Project to run nodejs App using Terrraform on AWS, Ansible, Jenkins
+
+
+
+
+
+
 # terraform
  create infrastructure with module for network 
  
@@ -16,5 +23,22 @@
    9) Redis
    
    
-    ![Image](http://url/a.png) 
+    ![Image](https://github.com/AmlAbdellatif/terraform-task/blob/main/AWS-infra.jpg)
+    
+## To Apply Terrafom in AWS
+ * install IAM user in AWS 
+ * create s3 bucket in AWS in eu-central-1 region and change name in /terraform/backend.tf with new bucket name
+ * install terrraform from [Here](https://www.terraform.io/downloads)
+ * create works space  ``` terrafom wokspace new <workspace_name> ``` and use it ` terrafom wokspace new <workspace_name> `
+ * run using ` terraform init ` & ` terrraform apply `
 
+
+## Jenkins Configruation
+ * install plugins:-
+   1-AWS steps
+   2-terraform
+   3-ansible
+ * create credential `with aws` 
+ * create a pipeline to run terraform 
+ * 
+ 
