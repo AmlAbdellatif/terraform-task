@@ -40,5 +40,11 @@
    3-ansible
  * create credential `with aws` 
  * create a pipeline to run terraform 
- * 
+ ## Ansible
+  * run ansible  ` ansible-playbook apply slave.yml ` to install JDK in your instance
+  * in file  ~/.ssh/config then write in it:
+  ```
+  the ip of the private and public ec2 and aws key file
+  ```
+  * scp agent.jar <ip_private_ec2>:/home/ubuntu  
  
