@@ -22,6 +22,12 @@ resource "aws_security_group" "sg1" {
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+   ingress {
+    from_port = 80
+    to_port = 80
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
     ingress {
     from_port = 6379
     to_port = 6379
@@ -52,6 +58,12 @@ resource "aws_security_group" "sg2" {
     to_port = 22
     protocol = "tcp"
     cidr_blocks = [module.network.vpc_cidr] 
+  }
+    ingress {
+    from_port = 80
+    to_port = 80
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
     ingress {
     from_port = 3000
