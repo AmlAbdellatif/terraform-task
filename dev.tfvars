@@ -1,6 +1,6 @@
 vpc_cidr         = "10.0.0.0/16"
 region           = "us-east-2"
-image_id         = "ami-04505e74c0741db8d"
+image_id         = "ami-0aeb7c931a5a61206"
 vpc_name         = "dev-vpc"
 workspace        = "dev"
 pub-key-pair     = "dev-pub-key"
