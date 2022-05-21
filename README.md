@@ -1,10 +1,4 @@
 #Project to run nodejs App using Terrraform on AWS, Ansible, Jenkins
-
-
-
-
-
-
 # terraform
  create infrastructure with module for network 
  
@@ -27,7 +21,7 @@
     
 ## To Apply Terrafom in AWS
  * install IAM user in AWS 
- * create s3 bucket in AWS in eu-central-1 region and change name in /terraform/backend.tf with new bucket name
+ * create s3 bucket in AWS in eu-central-1 region and change name in backend.tf with new bucket name
  * install terrraform from [Here](https://www.terraform.io/downloads)
  * create works space  ``` terrafom wokspace new <workspace_name> ``` and use it ` terrafom wokspace new <workspace_name> `
  * run using ` terraform init ` & ` terrraform apply `
