@@ -1,5 +1,5 @@
 vpc_cidr         = "10.0.0.0/16"
-region           = "us-east-1"
+region           = "us-east-2"
 image_id         = "ami-04505e74c0741db8d"
 vpc_name         = "dev-vpc"
 workspace        = "dev"
