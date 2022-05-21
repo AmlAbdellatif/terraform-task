@@ -63,13 +63,13 @@ resource "aws_security_group" "sg2" {
     from_port = 3306
     to_port = 3306
     protocol = "tcp"
-    cidr_blocks = [module.network.vpc_cidr] 
+    cidr_blocks = ["0.0.0.0/0"]
   }
     ingress {
     from_port = 6379
     to_port = 6379
     protocol = "tcp"
-    cidr_blocks = [module.network.vpc_cidr] 
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
