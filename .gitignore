@@ -1,3 +1,4 @@
 subnet_grpoups.tf
-.terraform*
 RDS.tf
+**/.terraform/*
+.terraform*
